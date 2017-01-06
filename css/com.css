@@ -1,0 +1,41 @@
+
+#maskLayer{ display:none; position:absolute; z-index:100; left:0; top:0; width:100%; margin:0 auto; height:100%; background:#000; opacity:0.5; filter:alpha(opacity=50);}
+#alertInfo{ display:none; background:#fff; left:50%; top:-100%; position:absolute; z-index:200; width:96%; max-width:640px;}
+#alertInfo .close{ position:absolute; right:8px; top:0.16rem; overflow:hidden; font-size:0; text-indent:-999999px; display:block; width:21px; height:23px; cursor:pointer; background:url("../images/close.png")/*tpa=http://zj.kongzhong.com/m/images/201610/close.png*/ no-repeat center center; z-index:220; transition:transform ease-in 0.2s;}
+#alertInfo .close:hover{ -webkit-transform:rotateZ(180deg); -moz-transform:rotateZ(180deg); -ms-transform:rotateZ(180deg); -o-transform:rotateZ(180deg); transform:rotateZ(180deg);}
+#alertInfo h4{ background:#fbfbfb; color:#6b6b6b; text-align:center; font-size:18px; zoom:0; font-weight:normal; margin-bottom:0.15rem; line-height:1; padding:0.22rem 0; border-bottom:1px solid #ddd;}
+.logInfo{ width:100%;}
+.logInfo ul{ margin:0 auto; width:282px;}
+.logInfo ul li{ float:left; display:inline; width:100%; margin-bottom:0.15rem; line-height:30px; font-size:24px;}
+.logInfo ul li label,.logInfo ul li input,.selBox,.logInfo ul li img{ float:left; display:inline; line-height:32px; font-size:14px; color:#b1a9a9; font-weight:normal;}
+.logInfo ul li input,.selBox{ text-indent:0.5em; padding:0 5px; width:212px; background:#fff; border:none; border:1px solid #d9d9d9; border-radius:5px; height:30px; font-size:14px; line-height:30px; color:#000;}
+.logInfo ul li label{ text-align:right; height:30px; font-size:14px; width:63px;}
+.selBox{ position:relative;}
+.selBox i,.selBox em,.selBox em b{ position:absolute; display:block; right:0; top:0; cursor:pointer; font-style:normal;}
+.selBox i{ padding:0 5px; text-indent:0.5em; width:212px; z-index:6; height:30px; line-height:30px;}
+.selBox em{ z-index:5; width:31px; height:100%; border-left:1px solid #d9d9d9; overflow:hidden; background:url("../images/201610/sel.png")/*tpa=http://zj.kongzhong.com/m/images/201610/sel.png*/ no-repeat center center;}
+.selBox em b{ display:none;}
+.selBox .selC{ display:none; background:#e5e5e5; z-index:1; position:absolute; top:31px; width:212px; left:0;}
+.selBox .selC a{ display:block; font-size:14px; padding:0 5px; color:#2a1a11; line-height:32px;}
+.selBox .selC a:hover{ text-decoration:none;}
+.selBox .selC a.selectedV,.selBox .selC a:hover{ background:#6c6c6d; color:#fff;}
+.logInfo ul li.yzM{ position:relative;}
+.logInfo ul li #verifyImg{ background:#fff; position:absolute; right:6px; top:0; height:30px;}
+.logInfo ul li.tsli{ line-height:1; color:red; font-size:14px; margin-bottom:0;}
+.infoBtn{ margin:0 auto; text-align:center; width:100%; zoom:0;}
+.infoBtn a{ display:inline-block; vertical-align:top; text-align:center; width:120px; color:#fff; background:#f15b00; font-size:16px; font-weight:bold; height:40px; line-height:40px; margin:0 10px;}
+.infoBtn a:hover{ text-decoration:none;}
+.tsInfo .infoBtn{ *background:#f15b00;}
+.logInfo .infoBtn a,.tsInfo .infoBtn a{ display:block; margin:0 auto; width:100%; zoom:0;}
+.tsInfo .dd a{ display:inline-block; width:50%;}
+.tsInfo .dd a.c{ background:#999;}
+.tsInfo{ padding-bottom:0.32rem; font-size:16px; line-height:1.5; color:#000; text-align:center;}
+.tsInfo .p{ padding:0 0.36rem; margin:0 auto;}
+.tsInfo .p a{ color:#d61515;}
+.tsInfo .infoBtn{ margin-top:0.24rem; margin-bottom:-0.32rem; width:100%;}
+.userInfo{ font-size:0.2rem; padding-bottom:0.2rem; color:#6b6b6b;}
+.userInfo table td,.userInfo table th{ text-align:center; font-weight:normal; padding:0.05rem; font-size:0.16rem;}
+.userInfo table thead th{ background:#ddd;}
+.userInfo table thead td{ line-height:0;}
+
+.userInfo table thead th,.userInfo table thead td{ width:33.33%;}
