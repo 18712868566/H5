@@ -129,6 +129,25 @@
 	<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
 
 	<script type="text/javascript">
+	function orient() {
+        //alert('gete');
+        if (window.orientation == 0 || window.orientation == 180) {
+            $("body").attr("class", "portrait");
+            orientation = 'portrait';
+            return false;
+        }
+        else if (window.orientation == 90 || window.orientation == -90) {
+            $("body").attr("class", "landscape");
+            orientation = 'landscape';
+   
+            return false;
+        }
+    }
+   
+   
+    $(function(){
+        orient();
+    });
     //模拟加载慢的效果
     var callbacks = [];
     imgLoader(["images/1.jpg", "images/2.jpg", "images/3.jpg",   "images/4.jpg",   "images/5.jpg",   "images/aotoplaybtn.png",   "images/close.png",   "images/gmtit.png",   "images/gmtit2.png",   "images/gmtit3.png",   "images/gmtit4.png",   "images/gmtit5.png",   "images/img1.png",   "images/img2.png",   "images/img3.png",   "images/img4.png",   "images/img5.png",   "images/img6.png",   "images/next.png",   "images/page2videoImg.png",   "images/tit1.png",   "images/tit2.png",   "images/tit3.png",   "images/tit4.png",   "images/tit5.png",   "images/tit6.png",   "images/tit7.png",   "images/tit8.png",   "images/tit9.png",   "images/tit10.png",   "images/tit11.png",   "images/video2.png",   "images/videobtn2.png"	    ], function (percentage) {
