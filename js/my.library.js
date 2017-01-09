@@ -40,11 +40,6 @@
  
 }(window, document));
 
-$(function(){
-	showDiv(".log_pop");
-	showDiv(".confirmation_box_two");
-	showDiv(".tishi_pop");
-});
 
 
 //让子元素水平居中父元素

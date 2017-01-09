@@ -69,23 +69,23 @@
 	animation: moveToBottom ease 1.5s both infinite;
 }
 @-webkit-keyframes moveToBottom {
-	from { }
+	from { -webkit-transform: translateY(0%);}
 	to { -webkit-transform: translateY(100%); }
 }
 @-moz-keyframes moveToBottom {
-	from { }
+	from { -webkit-transform: translateY(0%);}
 	to { -webkit-transform: translateY(100%); }
 }
 @-ms-keyframes moveToBottom {
-	from { }
+	from {-webkit-transform: translateY(0%); }
 	to { -webkit-transform: translateY(100%); }
 }
 @-o-keyframes moveToBottom {
-	from { }
+	from {-webkit-transform: translateY(0%); }
 	to { -webkit-transform: translateY(100%); }
 }
 @keyframes moveToBottom {
-	from { }
+	from { -webkit-transform: translateY(0%);}
 	to { -webkit-transform: translateY(100%); transform: translateY(100%); }
 }
 
