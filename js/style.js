@@ -6,9 +6,16 @@ $(function(){
 	
 	
 	//动态添加路径
-    Media = document.getElementById("audio");
+     Media = document.getElementById("audio");
 	Media.src = "musrc/mp2.mp3"; 
 	Media.play();
+    
+    //手机端触摸播放音乐
+	$('html,body').one('touchstart',function(){
+		var mp3 = document.getElementById("audio");
+	    Media.play();
+	    //console.log('off')
+	});
 	
     //音乐
     var playing=true;
