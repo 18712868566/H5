@@ -9,7 +9,7 @@ $(function(){
     Media = document.getElementById("audio");
 	Media.src = "musrc/mp2.mp3"; 
 	Media.play();
-	//alert('开始播放')
+	
     //音乐
     var playing=true;
 	$("#music_icon").bind("click",function(){
