@@ -60,14 +60,11 @@
 /*下箭头*/
 .next{display: block;width: .62rem;height: .21rem;position: absolute;bottom: .3rem;left: 50%;margin-left: -.31rem;}
 .next img{width: 100%;}
-
 .pt-page-moveIconUp {
 	-webkit-animation: moveIconUp ease 1.5s both infinite;
-	-moz-animation: moveIconUp ease 1.5s both infinite;
-	-ms-animation: moveIconUp ease 1.5s both infinite;
-	-o-animation: moveIconUp ease 1.5s both infinite;
 	animation: moveToBottom ease 1.5s both infinite;
 }
+
 @-webkit-keyframes moveToBottom {
 	from { -webkit-transform: translateY(0%);}
 	to { -webkit-transform: translateY(100%); }
