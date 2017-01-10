@@ -8,10 +8,10 @@ $(function(){
 	
     
     //音乐
-	var mp3 = document.getElementById("audio");
-	mp3.autoplay = true;
-	mp3.load();
-	mp3.play();
+	$('html').one('touchstart',function(){
+		var mp3 = document.getElementById("audio");
+	    audio.play();
+	});
     var playing=true;
 	$("#music_icon").bind("click",function(){
 		if(playing){
