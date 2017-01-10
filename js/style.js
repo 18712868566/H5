@@ -8,7 +8,10 @@ $(function(){
 	
     
     //音乐
-	document.getElementById("audio").play();
+	var mp3 = document.getElementById("audio");
+	mp3.autoplay = true;
+	mp3.load();
+	mp3.play();
     var playing=true;
 	$("#music_icon").bind("click",function(){
 		if(playing){
