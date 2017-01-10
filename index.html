@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>装甲战争</title>
+    <meta name="screen-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/com.css"/>
@@ -15,9 +20,9 @@
 <body>
 	<!--音乐-->
 	<div class="icon-audio" id="music_icon" data-type="audio">
-		<div class="icon-audio-on hide" data-action="Action://music#off"><i class="playmusic"></i></div>
-		<div class="icon-audio-off " data-action="Action://music#on"></div>
-		<audio preload="preload" loop   id="audio" src="musrc/mp2.mp3"><source src="musrc/mp2.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+		<div class="icon-audio-on " data-action="Action://music#off"><i class="playmusic"></i></div>
+		<div class="icon-audio-off hide" data-action="Action://music#on"></div>
+		<audio preload="preload" loop autoplay=""  id="audio" src="musrc/mp2.mp3"><source src="musrc/mp2.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
 	</div>
 
 
@@ -31,6 +36,7 @@
 			            <div class="loader__progress-bg"></div>
 			            <div id="loader__progress" class="loader__progress"></div>
 			            <div id="loader__info" class="loader__info">Loading 0%</div>
+	        			<h2 class="loadingtit"><img src="images/loadingtit.png"/></h2>
 			        </div>
 			   </section>
         	</div>
@@ -51,7 +57,7 @@
             		
             		<div class="videowrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
             			<a href="javascript:;" class="play page2Video">
-            				<i class="aotoplaybtn vBtn" data-url="http://yuntv.letv.com/bcloud.swf?uu=661c07e19e&vu=4617c27df9&auto_play=1&gpcflag=1"><img src="images/aotoplaybtn.png"/></i>
+            				<i class="aotoplaybtn vBtn" data-url="http://yuntv.letv.com/bcloud.swf?uu=661c07e19e&vu=7aa53f41a6&auto_play=1&gpcflag=1&lang=zh_CN"><img src="images/aotoplaybtn.png"/></i>
             			</a>
             		</div>
 	            	<span class="next pt-page-moveIconUp"><img src="images/next.png"/></span>
@@ -87,7 +93,7 @@
             		<div class="rdegbg aotudeg ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s">
 						<div class="videowrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="1.5s">
 	            			<a href="javascript:;" class="play page4Video">
-	            				<i class="aotoplaybtn4 vBtn" data-url="http://yuntv.letv.com/bcloud.swf?uu=661c07e19e&vu=97ffb6b16b&auto_play=1"><img src="images/videobtn2.png"/></i>
+	            				<i class="aotoplaybtn4 vBtn" data-url="http://yuntv.letv.com/bcloud.swf?uu=661c07e19e&vu=f09d03f331&auto_play=1&gpcflag=1&lang=zh_CN"><img src="images/videobtn2.png"/></i>
 	            			</a>
 	            		</div>
             		</div>
@@ -121,71 +127,26 @@
 	<script src="js/style.js" type="text/javascript" charset="utf-8"></script>
 
 	<script type="text/javascript">
-    //模拟加载慢的效果
-    var callbacks = [];
     imgLoader(["images/1.jpg", "images/2.jpg", "images/3.jpg",   "images/4.jpg",   "images/5.jpg",   "images/aotoplaybtn.png",   "images/close.png",   "images/gmtit.png",   "images/gmtit2.png",   "images/gmtit3.png",   "images/gmtit4.png",   "images/gmtit5.png",   "images/img1.png",   "images/img2.png",   "images/img3.png",   "images/img4.png",   "images/img5.png",   "images/img6.png",   "images/next.png",   "images/page2videoImg.png",   "images/tit1.png",   "images/tit2.png",   "images/tit3.png",   "images/tit4.png",   "images/tit5.png",   "images/tit6.png",   "images/tit7.png",   "images/tit8.png",   "images/tit9.png",   "images/tit10.png",   "images/tit11.png",   "images/video2.png",   "images/videobtn2.png"	    ], function (percentage) {
-        callbacks.push((function(percent, i){
-            return function(){
-                setTimeout(function(){
-                    var percentT = percent * 100;
-                    $('#loader__info').html('Loading ' + (parseInt(percentT)) + '%');
-                    $('#loader__progress')[0].style.width = percentT + '%';
-                    if (percent == 1) {
-                        setTimeout(function(){
-                            $('#loader').remove();
-                           //分屏
-							var swiper = new Swiper('.swiper-container', {
-								//pagination: '.swiper-pagination',
-						        pagination: null,
-						        direction: 'vertical',
-						        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
-								    swiperAnimateCache(swiper); //隐藏动画元素 
-								    swiperAnimate(swiper); //初始化完成开始动画
-								  }, 
-								  onSlideChangeEnd: function(swiper){ 
-								    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-								  } 
-						    });
-                        }, 100);
-                    }
-                    callbacks[i + 1] && callbacks[i + 1]();
-                },100);
-            }
-        })(percentage, callbacks.length));
-
-        if(percentage == 1) {
-            callbacks[0]();
+        var percentT = percentage * 100;
+        $('#loader__info').html('Loading ' + (parseInt(percentT)) + '%');
+        $('#loader__progress')[0].style.width = percentT + '%';
+        if (percentage == 1) {
+            $('#loader').remove();
+            //分屏
+			var swiper = new Swiper('.swiper-container', {
+		        pagination: null,
+		        direction: 'vertical',
+		        onInit: function(swiper){ 
+				    swiperAnimateCache(swiper); //隐藏动画元素 
+				    swiperAnimate(swiper); //初始化完成开始动画
+				  }, 
+				  onSlideChangeEnd: function(swiper){ 
+				    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				  } 
+		    });
         }
     });
-
-    //=================================================
-    //* 以上代码为模拟网速慢的情况，特意对进度处理的回调做了延迟
-    //* 真实环境，应该使用下面注释的代码
-    //=================================================
-
-	/*
-        imgLoader(["images/1.jpg", "images/2.jpg", "images/3.jpg",   "images/4.jpg",   "images/5.jpg",   "images/aotoplaybtn.png",   "images/close.png",   "images/gmtit.png",   "images/gmtit2.png",   "images/gmtit3.png",   "images/gmtit4.png",   "images/gmtit5.png",   "images/img1.png",   "images/img2.png",   "images/img3.png",   "images/img4.png",   "images/img5.png",   "images/img6.png",   "images/next.png",   "images/page2videoImg.png",   "images/tit1.png",   "images/tit2.png",   "images/tit3.png",   "images/tit4.png",   "images/tit5.png",   "images/tit6.png",   "images/tit7.png",   "images/tit8.png",   "images/tit9.png",   "images/tit10.png",   "images/tit11.png",   "images/video2.png",   "images/videobtn2.png"	    ], function (percentage) {
-            var percentT = percentage * 100;
-            $('#loader__info').html('Loading ' + (parseInt(percentT)) + '%');
-            $('#loader__progress')[0].style.width = percentT + '%';
-            if (percentage == 1) {
-                $('#loader').remove();
-                //分屏
-				var swiper = new Swiper('.swiper-container', {
-					//pagination: '.swiper-pagination',
-			        pagination: null,
-			        direction: 'vertical',
-			        onInit: function(swiper){ 
-					    swiperAnimateCache(swiper); //隐藏动画元素 
-					    swiperAnimate(swiper); //初始化完成开始动画
-					  }, 
-					  onSlideChangeEnd: function(swiper){ 
-					    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-					  } 
-			    });
-            }
-        });
-    */
 	</script>
 </body>
 </html>

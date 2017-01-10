@@ -61,10 +61,10 @@ body {background: #eee;font-family: Helvetica Neue, Helvetica, Arial, sans-serif
 
 
 .dl_01 .ddimg1{width: 1.33rem;height: 1.45rem;}
-.dl_01 .ddimg2{width: 1.91rem;height: 1.72rem;}
+.dl_01 .ddimg2{width: 1.84rem;height: 1.73rem;}
 
 .dl_02 .ddimg3{width: 1.33rem;height: 1.56rem;}
-.dl_02 .ddimg4{width: 1.47rem;height: 1.60rem;}
+.dl_02 .ddimg4{width: 1.74rem;height: 1.60rem;}
 .dl_02 .ddimg5{width: 1.33rem;height: 1.49rem;}
 
 /*pages4*/
@@ -153,18 +153,29 @@ animation-delay: -0.8s;
 
 
 .loader {z-index: 99;text-align: center;font-size: .18rem;background: #fff;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;/* Center slide text vertically */}
-.loader__bar {color: #FF0000; line-height: .5rem;height: .5rem;position: absolute;left: 50%;top: 50%;width: 4rem;text-align: center;margin-left: -2rem;margin-top: -1rem;overflow: hidden;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;background: #999;}
+.loader__bar {line-height: .17rem;height: .17rem;position: absolute;left: 50%;top: 50%;width: 4rem;text-align: center;margin-left: -2rem;margin-top: -1rem;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;background: url(../images/loadingbg.png) no-repeat center 0;background-size: 100% 100%;}
 .loader__progress,.loader__progress-bg,.loader__info {    position: absolute;    height: 100%;    left: 0;    top: 0;}
 .loader__info{text-align: center;width: 100%;}
-.loader__progress{background-size: 30px 30px;
-background-image: -webkit-linear-gradient(-45deg, #63B8FF, #63B8FF 25%, #BFEFFF 25%, #BFEFFF 50%, #63B8FF 50%, #63B8FF 75%, #BFEFFF 75%, #BFEFFF);
-background-image: -moz-linear-gradient(-45deg, #63B8FF, #63B8FF 25%, #BFEFFF 25%, #BFEFFF 50%, #63B8FF 50%, #63B8FF 75%, #BFEFFF 75%, #BFEFFF);
-background-image: linear-gradient(-45deg, #63B8FF, #63B8FF 25%, #BFEFFF 25%, #BFEFFF 50%, #63B8FF 50%, #63B8FF 75%, #BFEFFF 75%, #BFEFFF);
+.loader__progress{height: .1rem;line-height: .1rem; margin-top: .03rem;margin-left: .03rem;overflow: hidden;
+-webkit-border-radius: .05rem;
+-moz-border-radius: .05rem;
+border-radius: .05rem;
+-webkit-box-shadow: 0px 0px  15px 2px #1b405e;
+-moz-box-shadow:0px 0px  15px 2px #1b405e;
+box-shadow: 0px 0px  15px 2px #1b405e;
+background-size: 30px 30px;
+background-image: -webkit-linear-gradient(-45deg, #fecb01, #fecb01 25%, #ffd737 25%, #ffd737 50%, #fecb01 50%, #fecb01 75%, #ffd737 75%, #ffd737);
+background-image: -moz-linear-gradient(-45deg, #fecb01, #fecb01 25%, #ffd737 25%, #ffd737 50%, #fecb01 50%, #fecb01 75%, #ffd737 75%, #ffd737);
+background-image: linear-gradient(-45deg, #fecb01, #fecb01 25%, #ffd737 25%, #ffd737 50%, #fecb01 50%, #fecb01 75%, #ffd737 75%, #ffd737);
 -webkit-animation: animate 1.5s linear infinite;
 -moz-animation: animate 1.5s linear infinite;
-animation: animate 1.5s linear infinite;}
+animation: animate 1.5s linear infinite;
+}
 .loading{background: #23262b;}
 
+.loadingtit{width: 2.98rem;height: .88rem;position: absolute;left: 50%;margin-left: -1.49rem;top: -1.3rem;}
+.loadingtit img{width: 100%;}
+.loader__info{top: .5rem;color: #ffd737; font-size: .18rem;}
 
 @-webkit-keyframes animate {
 	from {

@@ -8,7 +8,7 @@ $(function(){
 	
     
     //音乐
-    var playing=false;
+    var playing=true;
 	$("#music_icon").bind("click",function(){
 		if(playing){
 			$(this).find(".icon-audio-off").removeClass("hide");
@@ -95,5 +95,67 @@ $(function(){
 	showDiv(".log_pop");
 	showDiv(".confirmation_box_two");
 	showDiv(".tishi_pop");
+});
+
+ //模拟加载慢的效果
+var callbacks = [];
+imgLoader(["images/1.jpg", "images/2.jpg", "images/3.jpg",   "images/4.jpg",   "images/5.jpg",   "images/aotoplaybtn.png",   "images/close.png",   "images/gmtit.png",   "images/gmtit2.png",   "images/gmtit3.png",   "images/gmtit4.png",   "images/gmtit5.png",   "images/img1.png",   "images/img2.png",   "images/img3.png",   "images/img4.png",   "images/img5.png",   "images/img6.png",   "images/next.png",   "images/page2videoImg.png",   "images/tit1.png",   "images/tit2.png",   "images/tit3.png",   "images/tit4.png",   "images/tit5.png",   "images/tit6.png",   "images/tit7.png",   "images/tit8.png",   "images/tit9.png",   "images/tit10.png",   "images/tit11.png",   "images/video2.png",   "images/videobtn2.png"	    ], function (percentage) {
+    callbacks.push((function(percent, i){
+        return function(){
+            setTimeout(function(){
+                var percentT = percent * 100;
+                $('#loader__info').html('Loading ' + (parseInt(percentT)) + '%');
+                $('#loader__progress')[0].style.width = percentT + '%';
+                if (percent == 1) {
+                    setTimeout(function(){
+                        $('#loader').remove();
+                       //分屏
+						var swiper = new Swiper('.swiper-container', {
+							//pagination: '.swiper-pagination',
+					        pagination: null,
+					        direction: 'vertical',
+					        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+							    swiperAnimateCache(swiper); //隐藏动画元素 
+							    swiperAnimate(swiper); //初始化完成开始动画
+							  }, 
+							  onSlideChangeEnd: function(swiper){ 
+							    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+							  } 
+					    });
+                    }, 10);
+                }
+                callbacks[i + 1] && callbacks[i + 1]();
+            },10);
+        }
+    })(percentage, callbacks.length));
+
+    if(percentage == 1) {
+        callbacks[0]();
+    }
+});
+//=================================================
+//* 以上代码为模拟网速慢的情况，特意对进度处理的回调做了延迟
+//* 真实环境，应该使用下面注释的代码
+//=================================================
+imgLoader(["images/1.jpg", "images/2.jpg", "images/3.jpg",   "images/4.jpg",   "images/5.jpg",   "images/aotoplaybtn.png",   "images/close.png",   "images/gmtit.png",   "images/gmtit2.png",   "images/gmtit3.png",   "images/gmtit4.png",   "images/gmtit5.png",   "images/img1.png",   "images/img2.png",   "images/img3.png",   "images/img4.png",   "images/img5.png",   "images/img6.png",   "images/next.png",   "images/page2videoImg.png",   "images/tit1.png",   "images/tit2.png",   "images/tit3.png",   "images/tit4.png",   "images/tit5.png",   "images/tit6.png",   "images/tit7.png",   "images/tit8.png",   "images/tit9.png",   "images/tit10.png",   "images/tit11.png",   "images/video2.png",   "images/videobtn2.png"	    ], function (percentage) {
+    var percentT = percentage * 100;
+    $('#loader__info').html('Loading ' + (parseInt(percentT)) + '%');
+    $('#loader__progress')[0].style.width = percentT + '%';
+    if (percentage == 1) {
+        $('#loader').remove();
+        //分屏
+		var swiper = new Swiper('.swiper-container', {
+			//pagination: '.swiper-pagination',
+	        pagination: null,
+	        direction: 'vertical',
+	        onInit: function(swiper){ 
+			    swiperAnimateCache(swiper); //隐藏动画元素 
+			    swiperAnimate(swiper); //初始化完成开始动画
+			  }, 
+			  onSlideChangeEnd: function(swiper){ 
+			    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+			  } 
+	    });
+    }
 });
  */
