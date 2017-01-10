@@ -4,28 +4,14 @@ $(function(){
 	
 	$('.swiper-container').css('-webkit-transform','scale('+s+','+s+') translate(0px,-'+ss+'px)');
 	
-	function autoPlayAudio2() {
-      window.onload = function() {
-         // alert(typeof WeixinJSBridge);
-         WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
-            // 在这里拿到 e.err_msg, 这里面就包含了所有的网络类型
-            // alert(e.err_msg);
-            document.getElementById('audio').play();
-         });
-      };
-   }
-   autoPlayAudio2();
-	//动态添加路径
-     Media = document.getElementById("audio");
-	Media.src = "musrc/mp2.mp3"; 
-	Media.play();
-    
-    //手机端触摸播放音乐
-	$('html').one('touchstart',function(){
-		var mp3 = document.getElementById("audio");
-	    Media.play();
-	    //console.log('off')
-	});
+	function audioAutoPlay(id){
+	    var audio = document.getElementById(id);
+	    audio.play();
+	    document.addEventListener("WeixinJSBridgeReady", function () {
+	            audio.play();
+	    }, false);
+	}
+	audioAutoPlay('audio');
 	
     //音乐
     var playing=true;
