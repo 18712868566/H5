@@ -5,8 +5,10 @@ $(function(){
 	$('.swiper-container').css('-webkit-transform','scale('+s+','+s+') translate(0px,-'+ss+'px)');
 	
 	
-	
-    
+	//动态添加路径
+    Media = document.getElementById("audio");
+	Media.src = "musrc/mp2.mp3"; 
+	Media.play();
     //音乐
 	$('html').one('touchstart',function(){
 		var mp3 = document.getElementById("audio");
