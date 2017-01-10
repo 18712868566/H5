@@ -10,7 +10,8 @@ $(function(){
     //音乐
 	$('html').one('touchstart',function(){
 		var mp3 = document.getElementById("audio");
-	    audio.play();
+	    mp3.play();
+		alert('开始播放')
 	});
     var playing=true;
 	$("#music_icon").bind("click",function(){
