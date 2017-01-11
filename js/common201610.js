@@ -3,6 +3,9 @@ var dialog; if(!dialog) dialog={};
 dialog={
 	//关闭
 	closeDiv:function(){
+		$("#music_icon").find(".icon-audio-off").addClass("hide");
+		$("#music_icon").find(".icon-audio-on").removeClass("hide");
+		document.getElementById("audio").play();
 		$("#alertInfo").stop(true,true).animate({
 			"top":"-100%",
 			"opacity":"0"

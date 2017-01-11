@@ -4,6 +4,7 @@ $(function(){
 	
 	$('.swiper-container').css('-webkit-transform','scale('+s+','+s+') translate(0px,-'+ss+'px)');
 	
+	
 	function audioAutoPlay(id){
 	    var audio = document.getElementById(id);
 	    audio.play();
@@ -12,7 +13,6 @@ $(function(){
 	    }, false);
 	}
 	audioAutoPlay('audio');
-	
     //音乐
     var playing=true;
 	$("#music_icon").bind("click",function(){
@@ -37,6 +37,10 @@ $(function(){
 		uu：乐视云视频的客户ID 
 	*/
 	$(document).on("click",".vBtn",function(){
+		$("#music_icon").find(".icon-audio-off").removeClass("hide");
+		$("#music_icon").find(".icon-audio-on").addClass("hide");
+		document.getElementById("audio").pause();
+		
 		var url=$(this).attr("data-url");	
 		var vuId=getQueryString(url).vu;
 		var _ww = $("body").width(),
@@ -86,11 +90,12 @@ $(function(){
 	    }
 	    preload("images/1.jpg", "images/2.jpg", "images/3.jpg",   "images/4.jpg",   "images/5.jpg",   "images/aotoplaybtn.png",   "images/close.png",   "images/gmtit.png",   "images/gmtit2.png",   "images/gmtit3.png",   "images/gmtit4.png",   "images/gmtit5.png",   "images/img1.png",   "images/img2.png",   "images/img3.png",   "images/img4.png",   "images/img5.png",   "images/img6.png",   "images/next.png",   "images/page2videoImg.png",   "images/tit1.png",   "images/tit2.png",   "images/tit3.png",   "images/tit4.png",   "images/tit5.png",   "images/tit6.png",   "images/tit7.png",   "images/tit8.png",   "images/tit9.png",   "images/tit10.png",   "images/tit11.png",   "images/video2.png",   "images/videobtn2.png"	    )	
 	})();
+	
 })
 
 
 
- 
+
 
 
 
