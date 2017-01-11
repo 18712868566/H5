@@ -205,3 +205,26 @@ animation: animate 1.5s linear infinite;
 }
 
 
+/*扫码*/
+.tit12{text-align: center;font-size: .18rem;padding: .2rem 0 0;color: #fff;}
+.tit11{position: relative;overflow: hidden;}
+.sm{width: .8rem;height: 1px;position: absolute;top: 0;right: 1.5rem;background: #fff;
+box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+-webkit-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+-moz-box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+-webkit-animation:mymove 2s infinite; /*Safari and Chrome*/
+animation:mymove 1.5s infinite;
+}
+
+@keyframes mymove
+{
+from {top:0px;}
+to {top:1.25rem;}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {top:0px;}
+to {top:1.25rem;}
+}
+
